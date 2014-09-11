@@ -5,7 +5,7 @@ $this->load->helper("nav_top");
 
 
 <h2>Senior Project Website</h2>
-<p>Developed to help FIU Computer Science students to choose their senior project. </p>
+<p>This project was initiated and led by <a href="http://www.cis.fiu.edu/~sadjadi/">Prof. Masoud Sadjadi</a> to help FIU Computer Science students with their senior project assignment. </p>
 <p>Performs an intelligent match between users and projects, determining the best project for each student.</p>
 
 <ul>
