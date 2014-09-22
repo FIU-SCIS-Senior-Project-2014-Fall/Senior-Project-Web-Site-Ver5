@@ -134,6 +134,7 @@
 	echo form_close( );
 ?>
 </div>
+  <input type="checkbox" id="selectall"/> Select All
 <br>
 <?php echo form_open('admin/activate_deactive_users', array(
         'class' => '',
@@ -282,14 +283,14 @@
                                         {
                                                 echo( "<td style=\"background-color: green;\"><center>" );
                                                         echo( "<label>Deactivate</label><br><br>" );
-                                                        echo( "<input type=\"checkbox\" name=\"users[]\" value=\"" . $row[ 'id' ] . "\">" );
+                                                        echo( "<input class=\"checkbox\" type=\"checkbox\" name=\"users[]\" value=\"" . $row[ 'id' ] . "\">" );
                                                 echo( "</center></td>" );
                                         }
                                         else if( $row[ 'status' ] === "INACTIVE" )
                                         {
                                                 echo( "<td style=\"background-color: red;\"><center>" );
                                                         echo( "<label>Activate&nbsp;&nbsp;&nbsp;&nbsp;</label><br><br>" );
-                                                        echo( "<input type=\"checkbox\" name=\"users[]\" value=\"" . $row[ 'id' ] . "\">" );
+                                                        echo( "<input class=\"checkbox\" type=\"checkbox\" name=\"users[]\" value=\"" . $row[ 'id' ] . "\">" );
                                                 echo( "</center></td>" );
                                         }
               echo( "</tr>" );
@@ -301,6 +302,23 @@
 <br><br>
 <?php echo 'Choose an action to apply:'; ?>
 <div text-align: center>
+
+    <script> 
+    $(document).ready(function() {
+    $('#selectall').click(function(event) {  //on click 
+        if(this.checked) { // check select status
+            $('.checkbox').each(function() { //loop through each checkbox
+                this.checked = true;  //select all checkboxes with class "checkbox1"               
+            });
+        }else{
+            $('.checkbox').each(function() { //loop through each checkbox
+                this.checked = false; //deselect all checkboxes with class "checkbox1"                       
+            });         
+        }
+    });
+    
+    });</script>
+    
         <label class="radio">
         <input type="radio" name="action" id="act" value="Activate" checked>
                 Activate the selected user(s)
