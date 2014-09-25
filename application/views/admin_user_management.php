@@ -351,14 +351,14 @@
 
 <script> 
     $(document).ready(function() {
-    $('#selectall').click(function(event) {  //on click 
-        if(this.checked) { // check select status
-            $('.checkbox').each(function() { //loop through each checkbox
-                this.checked = true;  //select all checkboxes with class "checkbox1"               
+    $('#selectall').click(function(event) {
+        if(this.checked) {
+            $('.checkbox').each(function() {
+                this.checked = true;              
             });
         }else{
-            $('.checkbox').each(function() { //loop through each checkbox
-                this.checked = false; //deselect all checkboxes with class "checkbox1"                       
+            $('.checkbox').each(function() {
+                this.checked = false;                     
             });         
         }
     });
