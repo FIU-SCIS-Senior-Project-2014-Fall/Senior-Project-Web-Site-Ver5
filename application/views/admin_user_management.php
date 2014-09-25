@@ -37,6 +37,23 @@
           box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 
+.frame {
+  padding: 8px;
+  margin-top: 240px;
+  margin-left: 4px;
+  width: 80px;
+  display:inline-block;
+  float: left;
+  background-color: #DCDCDC;
+  border: 1px solid #e3e3e3;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
 .subsection blockquote {
   border-color: #ddd;
   border-color: rgba(0, 0, 0, 0.15);
@@ -64,9 +81,9 @@
 ?>
 <h2>User Management</h2>
 <!-- Start Well for Head Professor Dashboard -->
- <div class="well" style="min-height: 200px;">
-  <div style="position: absolute; margin-top: 50px; margin-left: 400px;"> <h3> Filter Users </h3> </div>
+ <div class="well" style="min-height: 270px;">
 <div class="subsection">
+<div style="margin-top: -10px"> <h3> Filter Users </h3> </div>
 <?php
 	echo( "<div style='margin-left: -10px'>" );
 	echo form_checkbox( array(
@@ -134,7 +151,9 @@
 	echo form_close( );
 ?>
 </div>
-  <input type="checkbox" id="selectall"/> Select All
+<div class="frame">
+ <input type="checkbox" id="selectall"/> Select All
+</div>
 <br>
 <?php echo form_open('admin/activate_deactive_users', array(
         'class' => '',
@@ -302,22 +321,6 @@
 <br><br>
 <?php echo 'Choose an action to apply:'; ?>
 <div text-align: center>
-
-    <script> 
-    $(document).ready(function() {
-    $('#selectall').click(function(event) {  //on click 
-        if(this.checked) { // check select status
-            $('.checkbox').each(function() { //loop through each checkbox
-                this.checked = true;  //select all checkboxes with class "checkbox1"               
-            });
-        }else{
-            $('.checkbox').each(function() { //loop through each checkbox
-                this.checked = false; //deselect all checkboxes with class "checkbox1"                       
-            });         
-        }
-    });
-    
-    });</script>
     
         <label class="radio">
         <input type="radio" name="action" id="act" value="Activate" checked>
@@ -345,3 +348,20 @@
  
  
 <?php $this->load->view("template_footer"); ?>
+
+<script> 
+    $(document).ready(function() {
+    $('#selectall').click(function(event) {  //on click 
+        if(this.checked) { // check select status
+            $('.checkbox').each(function() { //loop through each checkbox
+                this.checked = true;  //select all checkboxes with class "checkbox1"               
+            });
+        }else{
+            $('.checkbox').each(function() { //loop through each checkbox
+                this.checked = false; //deselect all checkboxes with class "checkbox1"                       
+            });         
+        }
+    });
+    
+    });
+</script>
