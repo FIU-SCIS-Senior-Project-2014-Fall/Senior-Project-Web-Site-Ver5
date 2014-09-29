@@ -152,7 +152,7 @@
 ?>
 </div>
 <div class="frame">
- <input type="checkbox" id="selectall"/> Select All
+ <input type="checkbox" id="selectall"/> Selec
 </div>
 <br>
 <?php echo form_open('admin/activate_deactive_users', array(
